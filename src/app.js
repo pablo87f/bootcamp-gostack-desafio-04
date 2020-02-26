@@ -1,13 +1,12 @@
 import React from 'react';
 import './app.css'
-import profile from './assets/perfil-pablo.jpeg'
+import { Header } from './components/header';
 
 function App() {
 
     return (
         <>
-            <h1>Ola mundo</h1>
-            <img src={profile} width={200}></img>
+            <Header/>
         </>
     )
 }
