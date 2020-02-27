@@ -1,7 +1,7 @@
 import React from "react";
-import facebook from '../assets/facebook-logo.png'
-import profile from '../assets/profile.png'
-import './header.css' 
+import facebook from '../../assets/facebook-logo.png'
+import profile from '../../assets/profile.png'
+import './style.css' 
 
 export function Header() {
     return (
