@@ -1,27 +1,27 @@
 import React, { Component } from "react";
+import { Post } from "../post";
 import './style.css'
-import { render } from "react-dom";
 
 export class PostList extends Component {
-    
+
     state = {
         posts: [
             {
                 id: 1,
                 author: {
-                    name: "Goku",
-                    avatar: "http://localhost:8080/avatars/goku.png"
+                    name: "Pablo F Silva",
+                    avatar: "http://localhost:8080/avatars/pablo-avatar.jpeg"
                 },
-                date: "04 Jun 2019",
-                content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+                date: "04 nov 2019",
+                content: "Pessoal, alguém sabe se a EBanks está contratando?",
                 comments: [
                     {
                         id: 1,
                         author: {
-                            name: "Diego Fernandes",
-                            avatar: "http://url-da-imagem.com/imagem.jpg"
+                            name: "Goku",
+                            avatar: "http://localhost:8080/avatars/goku.png"
                         },
-                        content: "Conteúdo do comentário"
+                        content: "Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras. Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras."
                     }
                 ]
             },
@@ -32,96 +32,27 @@ export class PostList extends Component {
                     avatar: "http://localhost:8080/avatars/goku.png"
                 },
                 date: "04 Jun 2019",
-                content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+                content: "Pessoal, alguém sabe se a StackOverflow está contratando?",
                 comments: [
                     {
                         id: 1,
                         author: {
                             name: "Diego Fernandes",
-                            avatar: "http://url-da-imagem.com/imagem.jpg"
+                            avatar: "http://localhost:8080/avatars/12.jpg"
                         },
-                        content: "Conteúdo do comentário"
+                        content: "Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras. Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras."
                     }
                 ]
-            },
-            {
-                id: 3,
-                author: {
-                    name: "Goku",
-                    avatar: "http://localhost:8080/avatars/goku.png"
-                },
-                date: "04 Jun 2019",
-                content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
-                comments: [
-                    {
-                        id: 1,
-                        author: {
-                            name: "Diego Fernandes",
-                            avatar: "http://url-da-imagem.com/imagem.jpg"
-                        },
-                        content: "Conteúdo do comentário"
-                    }
-                ]
-            },
+            }
         ]
     };
 
     render() {
+        const { posts } = this.state
         return (
             <div className="main-content" >
                 <div className="list-content">
-                    <div className="post">
-                        <div className="post-header">
-                            <div className='avatar'>
-                                <img src="http://localhost:8080/avatars/pablo-avatar.jpeg" />
-                            </div>
-                            <div className="post-info">
-                                <span className="author">Pablo Fernandes</span>
-                                <span className="created_at">04 Nov 2020</span>
-                            </div>
-                        </div>
-                        <div className="post-content">
-                            <p>Pessoal, alguém sabe se a Rocketseat está contratando?</p>
-                        </div>
-                        <hr className="separator" />
-                        <div className="post-comments">
-                            <div className="comment">
-                                <div className="avatar">
-                                    <img src="http://localhost:8080/avatars/pablo-avatar.jpeg" />
-                                </div>
-                                <div className="comment-content">
-                                    <span className="author">Goku</span>
-                                    <span className="comment-text">Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras. Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className='avatar'>
-                                <img src="http://localhost:8080/avatars/pablo-avatar.jpeg" />
-                            </div>
-                            <div className="post-info">
-                                <span className="author">Pablo Fernandes</span>
-                                <span className="created_at">04 Nov 2020</span>
-                            </div>
-                        </div>
-                        <div className="post-content">
-                            <p>Pessoal, alguém sabe se a Rocketseat está contratando?</p>
-                        </div>
-                        <hr className="separator" />
-                        <div className="post-comments">
-                            <div className="comment">
-                                <div className="avatar">
-                                    <img src="http://localhost:8080/avatars/pablo-avatar.jpeg" />
-                                </div>
-                                <div className="comment-content">
-                                    <span className="author">Goku</span>
-                                    <span className="comment-text">Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras. Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {posts.map(post => <Post key={post.id} data={post} />)}
                 </div>
             </div>
         )
