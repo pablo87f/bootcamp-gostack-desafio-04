@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Comment } from "../comment";
 
 import './style.css'
 
@@ -41,15 +41,7 @@ export function Post({ data: post }) {
             </div>
             <hr className="separator" />
             <div className="post-comments">
-                <div className="comment">
-                    <div className="avatar">
-                        <img src="http://localhost:8080/avatars/pablo-avatar.jpeg" />
-                    </div>
-                    <div className="comment-content">
-                        <span className="author">Goku</span>
-                        <span className="comment-text">Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras. Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.</span>
-                    </div>
-                </div>
+                {post.comments.map(comment => <Comment key={comment.id} data={comment} />)}
             </div>
         </div>
     )
