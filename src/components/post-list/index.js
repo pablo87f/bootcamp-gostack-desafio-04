@@ -13,7 +13,7 @@ export class PostList extends Component {
                     avatar: "http://localhost:8080/avatars/pablo-avatar.jpeg"
                 },
                 date: "04 nov 2019",
-                content: "Pessoal, alguém sabe se a EBanks está contratando?",
+                content: "Pessoal, alguém sabe se a EBANX está contratando?",
                 comments: [
                     {
                         id: 1,
